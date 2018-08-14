@@ -1,6 +1,8 @@
-#ifndef _WSTRING_MAP_H_
-#define _WSTRING_MAP_H_
-
+#ifndef XCLIB_WSTRING_MAP_H_
+#define XCLIB_WSTRING_MAP_H_
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
 typedef struct wsm_bucket
 {
 	wchar_t** names;
@@ -159,4 +161,7 @@ param 2: Current index of enumeration
 wchar_t* wsm_get_name_index(wsm_list* list, unsigned int index);
 
 
-#endif // !_WSTRING_MAP_H_
+#ifdef __cplusplus
+}
+#endif // __cplusplus
+#endif // !XCLIB_WSTRING_MAP_H_

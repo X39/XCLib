@@ -1,6 +1,8 @@
-#ifndef _STRING_OP_H_
-#define _STRING_OP_H_
-
+#ifndef XCLIB_STRING_OP_H_
+#define XCLIB_STRING_OP_H_
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
 /*
 Checks if provided string starts with other string.
 Returns 0 if true or the index + 1 where the difference was found.
@@ -114,6 +116,7 @@ param 3: String 2 to compare against
 param 4: -1 or length of string 2
 */
 unsigned int str_cmpi(const char*, int, const char*, int);
-
-
-#endif // !_STRING_OP_H_
+#ifdef __cplusplus
+}
+#endif // __cplusplus
+#endif // !XCLIB_STRING_OP_H_

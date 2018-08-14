@@ -1,6 +1,8 @@
-#ifndef _STRING_MAP_H_
-#define _STRING_MAP_H_
-
+#ifndef XCLIB_STRING_MAP_H_
+#define XCLIB_STRING_MAP_H_
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
 typedef struct sm_bucket
 {
 	char** names;
@@ -159,4 +161,7 @@ param 2: Current index of enumeration
 char* sm_get_name_index(sm_list* list, unsigned int index);
 
 
-#endif // !_STRING_MAP_H_
+#ifdef __cplusplus
+}
+#endif // __cplusplus
+#endif // !XCLIB_STRING_MAP_H_
