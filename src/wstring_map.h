@@ -3,6 +3,22 @@
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
+
+/*
+ * Using this may look complicated at first, but actually it is not :)
+ * To create a new "map", you call `wsm_create_list`.
+ * To get rid of such a list, you call `wsm_destroy_list`.
+ * All other methods are just required to get this working or
+ * to eg. iterate over those.
+ *
+ * Example:
+ *     wsm_list* map = wsm_create_list(20, 10, 20);
+ *     wsm_set_value_in_bucket(map, "my_value", 10);
+ *     int my_value = (int)wsm_get_value_from_bucket(map, "my_value");
+ *     wsm_destroy_list(map, NULL);
+ */
+
+
 typedef struct wsm_bucket
 {
 	wchar_t** names;

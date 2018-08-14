@@ -3,6 +3,22 @@
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
+
+/*
+ * Using this may look complicated at first, but actually it is not :)
+ * To create a new "map", you call `sm_create_list`.
+ * To get rid of such a list, you call `sm_destroy_list`.
+ * All other methods are just required to get this working or
+ * to eg. iterate over those.
+ *
+ * Example:
+ *     sm_list* map = sm_create_list(20, 10, 20);
+ *     sm_set_value_in_bucket(map, "my_value", 10);
+ *     int my_value = (int)sm_get_value_from_bucket(map, "my_value");
+ *     sm_destroy_list(map, NULL);
+ */
+ 
+ 
 typedef struct sm_bucket
 {
 	char** names;
