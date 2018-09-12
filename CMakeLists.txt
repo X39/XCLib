@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 2.6)
+project(xclib)
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_MACOSX_RPATH 1)
+
+set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/output)
+set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/output)
+set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/output)
+
+file(GLOB vm_src "${PROJECT_SOURCE_DIR}/src/*.h" "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/*.c")
+add_library(xclib ${vm_src})
