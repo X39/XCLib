@@ -39,7 +39,7 @@ unsigned int wstr_swi(const wchar_t* lString, const wchar_t* rString)
 unsigned int wstr_ew(const wchar_t* lString, const wchar_t* rString)
 {
 	unsigned int i, j = 0;
-	unsigned int rlen = strlen(rString);
+	unsigned int rlen = wcslen(rString);
 	wchar_t lc, rc;
 	for (i = 0; lString[i] != '\0'; i++);
 	if (i < rlen)
@@ -59,7 +59,7 @@ unsigned int wstr_ew(const wchar_t* lString, const wchar_t* rString)
 unsigned int wstr_ewi(const wchar_t* lString, const wchar_t* rString)
 {
 	unsigned int i, j = 0;
-	unsigned int rlen = strlen(rString);
+	unsigned int rlen = wcslen(rString);
 	wchar_t lc, rc;
 	for (i = 0; lString[i] != '\0'; i++);
 	if (i < rlen)

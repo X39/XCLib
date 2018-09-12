@@ -191,7 +191,7 @@ unsigned int str_repchr(char* str, char toFind, char toReplace, int length)
 	{
 		length = strlen(str);
 	}
-	for (i = 0; i < length; i++)
+	for (i = 0; i < (unsigned int)length; i++)
 	{
 		if (str[i] == toFind)
 		{

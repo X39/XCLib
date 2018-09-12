@@ -97,7 +97,7 @@ sm_bucket* sm_get_bucket_for(sm_list* list, const char* name)
 	int i;
 	for (i = 0; name[i] != '\0'; i++)
 	{
-		hash += tolower(name[i]) * 2.0 * (double)hash;
+		hash += (int)(tolower(name[i]) * 2.0 * (double)hash);
 		hash >>= 1;
 	}
 	hash %= list->buckets_size;
