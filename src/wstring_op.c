@@ -38,43 +38,43 @@ unsigned int wstr_swi(const wchar_t* lString, const wchar_t* rString)
 
 unsigned int wstr_ew(const wchar_t* lString, const wchar_t* rString)
 {
-	unsigned int i;
-	unsigned int rlen = wcslen(rString);
+	unsigned int i, j = 0;
+	unsigned int rlen = strlen(rString);
 	wchar_t lc, rc;
-	for (i = 0; lString[i] != L'\0'; i++);
+	for (i = 0; lString[i] != '\0'; i++);
 	if (i < rlen)
 		return 0;
 	i -= rlen;
-	for (; lString[i] != L'\0'; i++)
+	for (; lString[i] != '\0'; i++)
 	{
-		lc = lString[i];
-		rc = rString[i];
-		if (rc == L'\0')
+		lc = tolower(lString[i]);
+		rc = tolower(rString[j++]);
+		if (rc == '\0')
 			return 1;
 		if (lc != rc)
 			return 0;
 	}
-	return 0;
+	return 1;
 }
 unsigned int wstr_ewi(const wchar_t* lString, const wchar_t* rString)
 {
-	unsigned int i;
-	unsigned int rlen = wcslen(rString);
+	unsigned int i, j = 0;
+	unsigned int rlen = strlen(rString);
 	wchar_t lc, rc;
-	for (i = 0; lString[i] != L'\0'; i++);
+	for (i = 0; lString[i] != '\0'; i++);
 	if (i < rlen)
 		return 0;
 	i -= rlen;
-	for (; lString[i] != L'\0'; i++)
+	for (; lString[i] != '\0'; i++)
 	{
-		lc = towlower(lString[i]);
-		rc = towlower(rString[i]);
-		if (rc == L'\0')
+		lc = tolower(lString[i]);
+		rc = tolower(rString[j++]);
+		if (rc == '\0')
 			return 1;
 		if (lc != rc)
 			return 0;
 	}
-	return 0;
+	return 1;
 }
 
 const wchar_t* wstr_strwrd(const wchar_t* lString, const wchar_t* rString, const wchar_t* letters)
